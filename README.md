@@ -28,7 +28,7 @@ go run main.go
 ├── middleware          (中间件)
 ├── model               (数据模型)
 ├── router              (路由层)
-├──	go.mod              (相关依赖)
+├── go.mod              (相关依赖)
 ├── go.sum              (相关依赖)
 └── main.go             (入口文件)
 ```
