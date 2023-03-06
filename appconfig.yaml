@@ -1,0 +1,14 @@
+# jwt config
+jwt:
+  issuer: 'go-fast-frame'
+  signature: 'RcWJhezAYXjzVzZRmaX8B8uy2U3Hgg2p'
+
+# 数据库配置
+database:
+  # 默认数据库
+  default: 'root:123456@tcp(127.0.0.1:3306)/go_fast_frame?charset=utf8mb4&parseTime=True&loc=Local'
+  
+# redis配置
+redis:
+  # 地址
+  addr: 'localhost:6379'
