@@ -15,7 +15,7 @@ type SysUser struct {
 	Phone    *string             //手机号码
 	Password string              //密码
 	Salt     string              //密码盐
-	Sex      int                 //用户性别（0未知，1男，2女）
+	Gender   constant.UserGender //用户性别（0未知，1男，2女）
 	Avatar   *string             //头像地址
 	Status   constant.UserStatus //帐号状态（0正常 1停用）
 	Remark   *string             //备注
