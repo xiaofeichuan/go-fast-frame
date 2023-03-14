@@ -1,7 +1,7 @@
 <div align=center>
 	<img src="resources/image-logo.png" width="150" height="150" />
     <h1>Go Fast Frame</h1>
-    <h5>Go+Gin+Gorm快速搭建基础框架</h5>
+    <h4>Go+Gin+Gorm快速搭建基础框架</h4>
 </div>
 
 ## 介绍
@@ -41,6 +41,7 @@ go run main.go
 ├── global              (全局对象)
 ├── middleware          (中间件)
 ├── model               (数据模型)
+├── resources           (README资源图片)
 ├── router              (路由层)
 ├── go.mod              (相关依赖)
 ├── go.sum              (相关依赖)
