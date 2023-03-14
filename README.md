@@ -1,5 +1,5 @@
 <div align=center>
-	<img src="/xiaofeichuan/go-fast-frame/raw/master/resources/image-logo.png" width="150" height="150" />
+	<img src="resources/image-logo.png" width="150" height="150" />
     <h1>Go Fast Frame</h1>
     <h5>Go+Gin+Gorm快速搭建基础框架</h5>
 </div>
@@ -49,5 +49,5 @@ go run main.go
 
 ## API文档（Swagger）
 
-![image](/xiaofeichuan/go-fast-frame/raw/master/resources/image-swagger.png)
+![image](resources/image-swagger.png)
 
