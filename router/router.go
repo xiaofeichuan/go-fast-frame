@@ -21,6 +21,14 @@ func InitRoutes() *gin.Engine {
 	// 允许修复当前请求路径，如/FOO和/..//Foo会被修复为/foo，并进行重定向，默认为 false。
 	routers.RedirectFixedPath = true
 
+	//注意 Recover 要尽量放在第一个被加载
+	//如不是的话，在recover前的中间件或路由，将不能被拦截到
+	//程序的原理是：
+	//1.请求进来，执行recover
+	//2.程序异常，抛出panic
+	//3.panic被 recover捕获，返回异常信息，并Abort,终止这次请求
+	routers.Use(middleware.Recover)
+
 	// 跨域
 	routers.Use(middleware.Cors())
 

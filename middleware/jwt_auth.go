@@ -35,12 +35,12 @@ func JwtAuth() gin.HandlerFunc {
 		claims, ok := token.Claims.(*utils.UserAuthClaims)
 		if !ok {
 			response.FailWithCode(http.StatusUnauthorized, "授权失败，解析失败", context)
-			context.Abort()
+			context.Abort() //结束后续操作
 			return
 		}
 		fmt.Println("获取 token 中的 claims")
 		fmt.Println(claims)
 		context.Set("claims", claims)
-		context.Next()
+		context.Next() //继续操作
 	}
 }
