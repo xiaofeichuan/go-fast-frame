@@ -1,3 +1,5 @@
+[TOC]
+
 <div align=center>
 	<img src="resources/image-logo.png" width="150" height="150" />
     <h1>Go Fast Frame</h1>
