@@ -65,7 +65,7 @@ func InitPrivateRouter(routerGroup *gin.RouterGroup) {
 
 // 初始化无权限路由
 func InitPublicRouter(routerGroup *gin.RouterGroup) {
-	// 授权
+	// 用户
 	userRouter := routerGroup.Group("/system/auth")
 	{
 		userRouter.POST("login", sysAuthApi.Login) // 登录

@@ -389,6 +389,10 @@ const docTemplate = `{
                     "description": "用户邮箱",
                     "type": "string"
                 },
+                "gender": {
+                    "description": "用户性别（0未知，1男，2女）",
+                    "type": "integer"
+                },
                 "id": {
                     "description": "编号",
                     "type": "integer"
@@ -404,10 +408,6 @@ const docTemplate = `{
                 "remark": {
                     "description": "备注",
                     "type": "string"
-                },
-                "sex": {
-                    "description": "用户性别（0未知，1男，2女）",
-                    "type": "integer"
                 },
                 "status": {
                     "description": "帐号状态（0正常 1停用）",

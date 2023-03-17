@@ -17,6 +17,7 @@ type JwtConfig struct {
 }
 
 type DatabaseConfig struct {
+	Type    string `yaml:"type"`
 	Default string `yaml:"default"`
 }
 

@@ -5,9 +5,16 @@ jwt:
 
 # 数据库配置
 database:
+  # 数据库类型 mysql/postgres
+  type : 'mysql'
   # 默认数据库
   default: 'root:123456@tcp(127.0.0.1:3306)/go_fast_frame?charset=utf8mb4&parseTime=True&loc=Local'
   
+  # # 数据库类型 mysql/postgres
+  # type : 'postgres'
+  # # 默认数据库
+  # default: 'host=localhost user=postgres password=postgres dbname=gorm port=9920 sslmode=disable TimeZone=Asia/Shanghai'
+   
 # redis配置
 redis:
   # 地址

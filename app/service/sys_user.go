@@ -58,7 +58,7 @@ func (s *SysUserService) Add(addDto dto.SysUserAddDto) error {
 		Phone:    addDto.Phone,
 		Password: pwd,
 		Salt:     salt,
-		Sex:      addDto.Sex,
+		Gender:   addDto.Gender,
 		Status:   addDto.Status,
 		Remark:   addDto.Remark,
 	}
@@ -73,7 +73,7 @@ func (s *SysUserService) Update(updateDto dto.SysUserUpdateDto) error {
 		"user_type": 0,
 		"email":     updateDto.Email,
 		"phone":     updateDto.Phone,
-		"sex":       updateDto.Sex,
+		"gender":    updateDto.Gender,
 		"status":    updateDto.Status,
 		"remark":    updateDto.Remark,
 	}).Error
