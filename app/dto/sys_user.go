@@ -13,7 +13,7 @@ type SysUserAddDto struct {
 	Email    string              `json:"email"`     //用户邮箱
 	Phone    *string             `json:"phone"`     //手机号码
 	Password string              `json:"password"`  //密码
-	Gender   constant.UserGender `json:"sex"`       //用户性别（0未知，1男，2女）
+	Gender   constant.UserGender `json:"gender"`    //用户性别（0未知，1男，2女）
 	Status   constant.UserStatus `json:"status"`    //帐号状态（0正常 1停用）
 	Remark   *string             `json:"remark"`    //备注
 }
@@ -24,7 +24,7 @@ type SysUserUpdateDto struct {
 	NickName string              `json:"nickName" ` //用户昵称
 	Email    string              `json:"email"`     //用户邮箱
 	Phone    *string             `json:"phone"`     //手机号码
-	Gender   constant.UserGender `json:"sex"`       //用户性别（0未知，1男，2女）
+	Gender   constant.UserGender `json:"gender"`    //用户性别（0未知，1男，2女）
 	Status   constant.UserStatus `json:"status"`    //帐号状态（0正常 1停用）
 	Remark   *string             `json:"remark"`    //备注
 }
