@@ -88,12 +88,12 @@ func (s *SysUserService) Delete(id int64) error {
 
 // Detail 获取用户详情
 func (s *SysUserService) Detail(id int64) (vo dto.SysUserVo, err error) {
-	err = global.DB.Model(&model.SysUser{}).Where("id = ?", id).Scan(&vo).Error
+	err = global.DB.Model(&model.SysUser{}).Where("id = ?", id).Find(&vo).Error
 	return vo, err
 }
 
 // List 用户列表
 func (s *SysUserService) List() (vos []dto.SysUserVo, err error) {
-	err = global.DB.Model(&model.SysUser{}).Scan(&vos).Error
+	err = global.DB.Model(&model.SysUser{}).Find(&vos).Error
 	return vos, err
 }

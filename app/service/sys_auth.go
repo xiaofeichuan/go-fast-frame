@@ -4,7 +4,7 @@ import (
 	"errors"
 	"go-fast-frame/app/dto"
 	"go-fast-frame/common/utils"
-	"go-fast-frame/constant"
+	"go-fast-frame/constants"
 	"go-fast-frame/global"
 	"go-fast-frame/model"
 	"time"
@@ -22,7 +22,7 @@ func (s *SysAuthService) Login(loginDto dto.LoginDto) (token string, err error) 
 		return "", errors.New("账号不存在")
 	}
 
-	if user.Status == constant.UserStatusDisable {
+	if user.Status == constants.UserStatusDisable {
 		return "", errors.New("账号已被禁用")
 	}
 

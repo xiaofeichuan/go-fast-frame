@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"go-fast-frame/constant"
+	"go-fast-frame/constants"
 	"go-fast-frame/global"
 	"time"
 
@@ -13,10 +13,10 @@ type JwtUtil struct{}
 var Jwt = new(JwtUtil)
 
 type UserAuthClaims struct {
-	UserId   uint              //用户Id
-	UserName string            //用户账号
-	NickName string            //用户昵称
-	UserType constant.UserType //用户类型（0普通账号，1超级管理员）
+	UserId   uint               //用户Id
+	UserName string             //用户账号
+	NickName string             //用户昵称
+	UserType constants.UserType //用户类型（0普通账号，1超级管理员）
 	jwt.StandardClaims
 }
 
