@@ -23,7 +23,7 @@ func JwtAuth() gin.HandlerFunc {
 		}
 
 		// 解析token
-		token, err := utils.ParseToken(tokenStr)
+		token, err := utils.Jwt.ParseToken(tokenStr)
 		if err != nil {
 			response.FailWithCode(http.StatusUnauthorized, "授权失败，错误Token", context)
 			context.Abort() //结束后续操作

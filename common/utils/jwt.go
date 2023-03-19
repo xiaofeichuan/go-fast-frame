@@ -20,11 +20,8 @@ type UserAuthClaims struct {
 	jwt.StandardClaims
 }
 
-// 签名
-// var secretKey = []byte(global.AppConfig.Jwt.Signature)
-
 // GenerateToken 生成token
-func GenerateToken(claim UserAuthClaims, expireTime time.Time) (string, error) {
+func (*JwtUtil) GenerateToken(claim UserAuthClaims, expireTime time.Time) (string, error) {
 
 	claim.StandardClaims = jwt.StandardClaims{
 		// 签名时间
@@ -38,13 +35,17 @@ func GenerateToken(claim UserAuthClaims, expireTime time.Time) (string, error) {
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claim)
+
+	// 签名
 	var secretKey = []byte(global.AppConfig.Jwt.Signature)
 	return token.SignedString(secretKey)
 }
 
 // ParseToken 解析token
-func ParseToken(tokenStr string) (*jwt.Token, error) {
+func (*JwtUtil) ParseToken(tokenStr string) (*jwt.Token, error) {
+	// 签名
 	var secretKey = []byte(global.AppConfig.Jwt.Signature)
+
 	// 解析 token string 拿到 token jwt.Token
 	var claim UserAuthClaims
 	return jwt.ParseWithClaims(tokenStr, &claim, func(tk *jwt.Token) (interface{}, error) {
