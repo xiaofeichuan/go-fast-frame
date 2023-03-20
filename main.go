@@ -20,7 +20,7 @@ import (
 func main() {
 
 	// 初始化配置
-	global.AppConfig = config.LoadAppConfig()
+	global.AppConfig = config.InitConfig()
 
 	// 初始化数据库
 	global.DB = tools.InitDB()

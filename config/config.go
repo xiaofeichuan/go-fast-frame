@@ -25,8 +25,8 @@ type RedisConfig struct {
 	Addr string `yaml:"addr"`
 }
 
-// LoadAppConfig 加载配置
-func LoadAppConfig() *AppConfig {
+// InitConfig 加载配置
+func InitConfig() *AppConfig {
 	//导入配置文件
 	viper.SetConfigType("yaml")
 	viper.SetConfigFile("appconfig.yaml")
