@@ -159,9 +159,6 @@ definitions:
     type: object
 info:
   contact: {}
-  description: go-fast-admin 接口文档
-  title: 系统模块
-  version: 1.0.0
 paths:
   /system/auth/login:
     post:
@@ -237,6 +234,8 @@ paths:
                 data:
                   $ref: '#/definitions/dto.SysUserVo'
               type: object
+      security:
+      - ApiKeyAuth: []
       summary: 获取用户详情
       tags:
       - 用户

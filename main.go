@@ -14,9 +14,6 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-// @title 系统模块
-// @version 1.0.0
-// @description go-fast-admin 接口文档
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header
 // @name Authorization
@@ -45,7 +42,7 @@ func main() {
 
 // 初始化swagger文档
 func InitSwagger(routers *gin.Engine) {
-	docs.SwaggerInfo.Title = "go-fast-frame"
+	docs.SwaggerInfo.Title = "Go Fast Frame"
 	docs.SwaggerInfo.Description = "Swagger Admin API"
 	docs.SwaggerInfo.Version = "1.0"
 	routers.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
