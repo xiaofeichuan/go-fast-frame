@@ -11,7 +11,7 @@
  Target Server Version : 80027
  File Encoding         : 65001
 
- Date: 06/03/2023 15:36:30
+ Date: 20/03/2023 15:58:46
 */
 
 SET NAMES utf8mb4;
@@ -30,7 +30,7 @@ CREATE TABLE `sys_user`  (
   `phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '手机号码',
   `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '密码',
   `salt` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '密码盐',
-  `sex` tinyint NULL DEFAULT NULL COMMENT '用户性别（0未知，1男，2女）',
+  `gender` tinyint NULL DEFAULT NULL COMMENT '用户性别（0未知，1男，2女）',
   `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '头像地址',
   `status` tinyint NOT NULL COMMENT '帐号状态（0启用 1停用）',
   `created_at` datetime NULL DEFAULT NULL COMMENT '创建时间',
@@ -38,6 +38,11 @@ CREATE TABLE `sys_user`  (
   `deleted_at` datetime NULL DEFAULT NULL COMMENT '删除时间',
   `remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 71 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户信息表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 72 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户信息表' ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of sys_user
+-- ----------------------------
+INSERT INTO `sys_user` VALUES (1, 'superAdmin', '超级管理员', 0, '666@qq.com', '19999999999', 'ec71d37f4340c223896afd45aaf3cf06', '41b278387b85404', 0, NULL, 0, '2023-03-18 16:24:23', '2023-03-18 16:29:30', NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
