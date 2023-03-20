@@ -1,4 +1,28 @@
 definitions:
+  constants.UserGender:
+    enum:
+    - 0
+    type: integer
+    x-enum-comments:
+      UserGenderNone: 未知
+    x-enum-varnames:
+    - UserGenderNone
+  constants.UserStatus:
+    enum:
+    - 0
+    type: integer
+    x-enum-comments:
+      UserStatusEnable: 启用
+    x-enum-varnames:
+    - UserStatusEnable
+  constants.UserType:
+    enum:
+    - 0
+    type: integer
+    x-enum-comments:
+      UserTypeGeneral: 普通用户
+    x-enum-varnames:
+    - UserTypeGeneral
   dto.LoginDto:
     properties:
       password:
@@ -14,8 +38,9 @@ definitions:
         description: 用户邮箱
         type: string
       gender:
+        allOf:
+        - $ref: '#/definitions/constants.UserGender'
         description: 用户性别（0未知，1男，2女）
-        type: integer
       nickName:
         description: 用户昵称
         type: string
@@ -29,8 +54,9 @@ definitions:
         description: 备注
         type: string
       status:
+        allOf:
+        - $ref: '#/definitions/constants.UserStatus'
         description: 帐号状态（0正常 1停用）
-        type: integer
       userName:
         description: 用户账号
         type: string
@@ -41,8 +67,9 @@ definitions:
         description: 用户邮箱
         type: string
       gender:
+        allOf:
+        - $ref: '#/definitions/constants.UserGender'
         description: 用户性别（0未知，1男，2女）
-        type: integer
       id:
         description: 编号
         type: integer
@@ -56,8 +83,9 @@ definitions:
         description: 备注
         type: string
       status:
+        allOf:
+        - $ref: '#/definitions/constants.UserStatus'
         description: 帐号状态（0正常 1停用）
-        type: integer
     type: object
   dto.SysUserVo:
     properties:
@@ -71,8 +99,9 @@ definitions:
         description: 用户邮箱
         type: string
       gender:
+        allOf:
+        - $ref: '#/definitions/constants.UserGender'
         description: 用户性别（0未知，1男，2女）
-        type: integer
       id:
         description: 编号
         type: integer
@@ -86,8 +115,9 @@ definitions:
         description: 备注
         type: string
       status:
+        allOf:
+        - $ref: '#/definitions/constants.UserStatus'
         description: 帐号状态（0正常 1停用）
-        type: integer
       updatedAt:
         description: 更新时间
         type: string
@@ -95,8 +125,9 @@ definitions:
         description: 用户账号
         type: string
       userType:
+        allOf:
+        - $ref: '#/definitions/constants.UserType'
         description: 用户类型（0普通账号，1超级管理员）
-        type: integer
     type: object
   request.IdInfoDto:
     properties:
@@ -206,8 +237,6 @@ paths:
                 data:
                   $ref: '#/definitions/dto.SysUserVo'
               type: object
-      security:
-      - ApiKeyAuth: []
       summary: 获取用户详情
       tags:
       - 用户
@@ -235,7 +264,7 @@ paths:
       parameters:
       - description: 页码
         in: query
-        name: pageIndex
+        name: pageNum
         type: integer
       - description: 每页数量
         in: query

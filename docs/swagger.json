@@ -105,11 +105,6 @@
         },
         "/system/user/detail": {
             "get": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
                 "tags": [
                     "用户"
                 ],
@@ -195,7 +190,7 @@
                     {
                         "type": "integer",
                         "description": "页码",
-                        "name": "pageIndex",
+                        "name": "pageNum",
                         "in": "query"
                     },
                     {
@@ -282,6 +277,42 @@
         }
     },
     "definitions": {
+        "constants.UserGender": {
+            "type": "integer",
+            "enum": [
+                0
+            ],
+            "x-enum-comments": {
+                "UserGenderNone": "未知"
+            },
+            "x-enum-varnames": [
+                "UserGenderNone"
+            ]
+        },
+        "constants.UserStatus": {
+            "type": "integer",
+            "enum": [
+                0
+            ],
+            "x-enum-comments": {
+                "UserStatusEnable": "启用"
+            },
+            "x-enum-varnames": [
+                "UserStatusEnable"
+            ]
+        },
+        "constants.UserType": {
+            "type": "integer",
+            "enum": [
+                0
+            ],
+            "x-enum-comments": {
+                "UserTypeGeneral": "普通用户"
+            },
+            "x-enum-varnames": [
+                "UserTypeGeneral"
+            ]
+        },
         "dto.LoginDto": {
             "type": "object",
             "properties": {
@@ -304,7 +335,11 @@
                 },
                 "gender": {
                     "description": "用户性别（0未知，1男，2女）",
-                    "type": "integer"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/constants.UserGender"
+                        }
+                    ]
                 },
                 "nickName": {
                     "description": "用户昵称",
@@ -324,7 +359,11 @@
                 },
                 "status": {
                     "description": "帐号状态（0正常 1停用）",
-                    "type": "integer"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/constants.UserStatus"
+                        }
+                    ]
                 },
                 "userName": {
                     "description": "用户账号",
@@ -341,7 +380,11 @@
                 },
                 "gender": {
                     "description": "用户性别（0未知，1男，2女）",
-                    "type": "integer"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/constants.UserGender"
+                        }
+                    ]
                 },
                 "id": {
                     "description": "编号",
@@ -361,7 +404,11 @@
                 },
                 "status": {
                     "description": "帐号状态（0正常 1停用）",
-                    "type": "integer"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/constants.UserStatus"
+                        }
+                    ]
                 }
             }
         },
@@ -382,7 +429,11 @@
                 },
                 "gender": {
                     "description": "用户性别（0未知，1男，2女）",
-                    "type": "integer"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/constants.UserGender"
+                        }
+                    ]
                 },
                 "id": {
                     "description": "编号",
@@ -402,7 +453,11 @@
                 },
                 "status": {
                     "description": "帐号状态（0正常 1停用）",
-                    "type": "integer"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/constants.UserStatus"
+                        }
+                    ]
                 },
                 "updatedAt": {
                     "description": "更新时间",
@@ -414,7 +469,11 @@
                 },
                 "userType": {
                     "description": "用户类型（0普通账号，1超级管理员）",
-                    "type": "integer"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/constants.UserType"
+                        }
+                    ]
                 }
             }
         },
