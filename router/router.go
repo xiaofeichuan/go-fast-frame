@@ -39,7 +39,7 @@ func InitRoutes() *gin.Engine {
 		InitPrivateRouter(privateGroup)
 	}
 
-	// 初始化后台路由
+	// 初始化公开路由
 	publicGroup := routers.Group("/")
 	{
 		InitPublicRouter(publicGroup)
@@ -63,7 +63,7 @@ func InitPrivateRouter(routerGroup *gin.RouterGroup) {
 
 }
 
-// 初始化无权限路由
+// 初始化公开路由
 func InitPublicRouter(routerGroup *gin.RouterGroup) {
 	// 用户
 	userRouter := routerGroup.Group("/system/auth")
