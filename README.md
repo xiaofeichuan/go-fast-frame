@@ -7,10 +7,10 @@
 ## 介绍
 
 GoFastFrame基于Go、Gin、Gorm快速搭建基础框架。当项目启动时，我们需要思考如何架构项目，我希望通过构建基础框架，为大家做项目提供参考。框架适用于大部分项目，可根据实际项目需要做调整。
-如果对您有帮助，您可以点 🌟Star 支持一下，谢谢~~
+
+如果对您有所帮助，您可以点 🌟Star 支持一下，谢谢~~
 
 ## 项目启动
-
 ```
 # 初始化依赖
 go mod init
@@ -52,4 +52,11 @@ go run main.go
 ## API文档（Swagger）
 
 ![image](resources/image-swagger.png)
+
+## 📖帮助文档
+
+* Gin https://gin-gonic.com/zh-cn/docs/
+* Gorm https://gorm.io/zh_CN/docs/index.html
+
+😎通过以上文档，你可以玩转本框架，如有问题可从文档中寻找解决办法。
 
