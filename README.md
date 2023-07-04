@@ -4,9 +4,9 @@
     <h4>Go+Gin+Gorm快速搭建基础框架</h4>
 </div>
 
-## 介绍
+## 框架介绍
 
-GoFastFrame基于Go、Gin、Gorm快速搭建基础框架。当项目启动时，我们需要思考如何架构项目，我希望通过构建基础框架，为大家做项目提供参考。框架适用于大部分项目，可根据实际项目需要做调整。
+GoFastFrame基于Go、Gin、Gorm快速搭建基础框架。当初学或者项目启动时，我们需要思考如何架构项目，希望通过构建基础框架，为大家做项目提供参考。本框架适用于大部分项目，可根据实际项目需要做调整。
 
 如果对您有所帮助，您可以点 🌟Star 支持一下，谢谢~~
 
@@ -22,7 +22,7 @@ go run main.go
 ## 项目功能
 
 * 初始化：配置文件、数据库、路由、Swagger
-* 中间件：全局异常处理、跨域、Jwt验证
+* 中间件：异常处理、跨域、Jwt验证
 * Api接口：用户User（Query、Add、Update、Delete、Detail、List），授权Auth（Login）
 
 ## 目录结构
@@ -53,7 +53,7 @@ go run main.go
 
 ![image](resources/image-swagger.png)
 
-## 📖帮助文档
+## 帮助文档
 
 * Gin https://gin-gonic.com/zh-cn/docs/
 * Gorm https://gorm.io/zh_CN/docs/index.html
