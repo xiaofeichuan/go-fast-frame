@@ -31,13 +31,15 @@ func (s *SysAuthService) Login(loginDto dto.LoginDto) (token string, err error) 
 		return "", errors.New("密码错误")
 	}
 
-	//生成token
+	//token声明
 	var claims = utils.UserAuthClaims{
 		UserId:   user.ID,
 		UserName: user.UserName,
 		NickName: user.NickName,
 		UserType: user.UserType,
 	}
+
+	//生成token
 	token, err = utils.Jwt.GenerateToken(claims, time.Now().AddDate(0, 0, 1))
 	return token, err
 }
